@@ -19,8 +19,11 @@ module.exports = {
       }
     ]
   },
-  plugins: PLUGINS,
+  // plugins: PLUGINS,
   devServer: {
     disableHostCheck: true
+  },
+  optimization: {
+    minimize: false
   }
 };

@@ -511,20 +511,14 @@ AFRAME.registerInputActivator('doublepress', DoublePress);
 
 function createSimpleActivator(suffix) {
   return function (el, button, onActivate) {
-    var eventName = button + suffix;
-
-    el.addEventListener(eventName, onActivate);
-    this.removeListeners = function () {
-      el.removeEventListener(eventName, onActivate);
-    };
+    el.addEventListener(button + suffix, onActivate);
   };
 }
 
-var activators = ['down', 'up', 'touchstart', 'touchend', 'changed', 'move'];
-
-activators.forEach(function (activatorName) {
-  AFRAME.registerInputActivator(activatorName, createSimpleActivator(activatorName));
-});
+AFRAME.registerInputActivator('down', createSimpleActivator('down'));
+AFRAME.registerInputActivator('up', createSimpleActivator('up'));
+AFRAME.registerInputActivator('touchstart', createSimpleActivator('touchstart'));
+AFRAME.registerInputActivator('touchend', createSimpleActivator('touchend'));
 
 /***/ }),
 /* 6 */

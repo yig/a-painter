@@ -112,8 +112,8 @@ var onLoaded = require('../onloaded.js');
 
         this.idx = Object.assign({}, this.sharedBuffer.idx);
 
-        this.sharedBuffer.update();
         this.computeStripVertexNormals();
+        this.sharedBuffer.update();
         return true;
       };
     })(),
